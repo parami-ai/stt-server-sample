@@ -63,7 +63,11 @@ async def main():
 
     print(">> startStream")
 
-    await sio.emit("startStream", {})
+    await sio.emit("startStream", {
+        "config": {
+            "rate": 48000, # optional
+        }
+    })
 
     print(">> streaming")
 
